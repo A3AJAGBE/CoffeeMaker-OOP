@@ -1,18 +1,31 @@
 """This is an OOP coffee maker application."""
 # Imports
+import os
 from menu import Menu
 from coffee_maker import CoffeeMaker
 from money_machine import MoneyMachine
+from logo import logo
+
+print(logo)
 
 # Instantiate the class
 make_coffee = CoffeeMaker()
 menu = Menu()
 payment = MoneyMachine()
 
+
+def clear():
+    """This function clears the console."""
+    os.system('clear')
+
+
 # The application
 turn_off = False
 while not turn_off:
     default = input('Do you want to make a coffee? ').lower()
+
+    clear()
+    print(logo)
 
     if default == 'yes':
         print('\nThis coffee maker only makes Espresso, Latte and Cappuccino.')
